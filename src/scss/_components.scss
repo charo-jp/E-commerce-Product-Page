@@ -229,7 +229,7 @@
 
 
 
-@media (min-width: 369px){
+@media (min-width: 769px){
   // header
   //cart-button
   .cart-button{
@@ -263,7 +263,7 @@
   }
 
 }
-@media (min-width: 369px) and (max-width: 900px){
+@media (min-width: 769px) and (max-width: 900px){
   .bg-dark::before{
     content: "";
     position: absolute;
@@ -315,7 +315,7 @@
 
 }
 
-@media (max-width: 368px) {
+@media (max-width: 768px) {
   // body
   .bg-dark::before{
     content: "";

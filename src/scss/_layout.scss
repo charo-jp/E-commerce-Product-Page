@@ -177,7 +177,7 @@ body{
 
 
 
-@media (min-width: 369px) {
+@media (min-width: 769px) {
   // header layout
     header{
       display: flex;
@@ -228,9 +228,10 @@ body{
   // main
     main{
       display: flex;
-      height: calc(100vh - 100px);
+      height: auto;
       justify-content: space-around;
       align-items: center;
+      margin-top: 10px;
     }
       
     //text-detail
@@ -289,7 +290,7 @@ body{
     }
 }
 
-@media (min-width: 369px) and (max-width: 900px){
+@media (min-width: 769px) and (max-width: 900px){
   body{
     width: 100%;
   }
@@ -344,7 +345,7 @@ body{
   }
 }
 
-@media (max-width: 368px) {
+@media (max-width: 768px) {
   // header layout
   body{
     width: 100%;
