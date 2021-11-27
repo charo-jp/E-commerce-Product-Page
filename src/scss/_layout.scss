@@ -1,0 +1,405 @@
+//all the Sass code handling the layout,
+//which is the container and grid systems
+// Mobile: 375px;
+// Desktop: 1440px;
+body{
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.carousel{
+  position: relative;
+  width: 300px;
+  margin: 0;
+}
+
+.carousel__image{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel__track-container{
+  position: relative;
+  background: lightgreen;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel__track{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+  height: 100%;
+  transition: transform 700ms ease;
+}
+
+.carousel__slide{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+.carousel__nav{
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.carousel__indicator{
+  width: 60px;
+  height: 60px;
+  margin:  12px;
+  padding: 0;
+  border-radius: 10px;;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid red;
+}
+
+.is-hidden{ display: none;}
+
+// display-price
+.display-price{
+  margin: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center ;
+}
+
+//add items
+.add-items{
+  margin: 0 20px;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  // add-to-cart-button
+  .add-to-cart{
+    margin: 20px;
+    padding: 20px;
+    width: calc(100% - 40px);
+    text-align: center;
+  }
+
+  // popup for a completing add
+  .complete-adding{
+    position: absolute;
+    width: 80%;
+    height: 100px;
+    top: -300px;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+ // set grid to cart popup
+ .cart-list{
+  height: 150px;
+  width: 90%;
+  margin: 10px 5% 0 5%;
+  justify-content: space-between;
+  align-items: center;
+  grid-template-columns:1fr 3fr 1fr;
+  column-gap: 5px;
+  grid-template-rows: 25px 25px 90px ;
+}
+
+.thumbnail{
+  grid-row: 1/3;
+  grid-column: 1/2;
+}
+
+.name{
+  grid-row: 1/2;
+  grid-column: 2/3;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.price-detail{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.delete{
+  grid-row: 1/3;
+  grid-column: 3/4;
+}
+
+.checkout{
+  grid-row: 3/4;
+  grid-column: 1/4;
+  align-self: flex-end;
+  padding: 20px;
+}
+
+.item-numbers::before{
+  @include humbh-Sans(400);
+  content: attr(data-count);
+  position: absolute; 
+  width: 20px;
+  height: 10px;
+  margin: -2px 0 0 5px;
+  background-color: $orange;
+  border-radius: 5px;
+  font-size: 8px;
+  color: $white;
+}
+
+//cart-window
+.cart-window{
+  position: absolute;
+  z-index: 100;
+  top: -300px;
+  width: 90%;
+  height: 230px;
+}
+
+@media (min-width: 1200px){
+  .carousel{
+    width: 500px;
+  }
+  .carousel__track-container{
+    width: 500px;
+    height: 500px;
+  }
+}
+
+
+
+@media (min-width: 369px) {
+  // header layout
+    header{
+      display: flex;
+      align-items: center;
+      border-bottom: 1.5px solid $grayish-blue;
+      height: 100px;
+    }
+
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      min-width: 400px;
+    }
+
+    .navbar li {
+      margin: 0 10px;
+    }
+    .navbar li button{
+      @include humbh-Sans(400);
+      color: $grayish-blue;
+      position: relative;
+    }
+
+    .navbar li button:hover{
+      @include humbh-Sans(400);
+      color: $black;
+    }
+
+    .navbar li button::after{
+      content: "";
+      position: absolute;
+      margin: auto;
+      width: 0%;
+      top: 60px;
+      left: 0;
+      right: 0;
+      color: transparent;
+      height: 4px;
+      transition: width 500ms ease-in-out;
+    }
+
+    .navbar li button:hover::after{
+      width: 100%;
+      top: 60px;
+      left: 0;
+      background: $orange;
+    }
+  // main
+    main{
+      display: flex;
+      height: calc(100vh - 100px);
+      justify-content: space-around;
+      align-items: center;
+    }
+      
+    //text-detail
+      .text-detail{
+        max-width: 540px;
+        width: 45%;
+      }
+    
+    // display-price
+    .display-price{
+      justify-content: flex-start;
+      margin: 0;
+    }
+    
+    .display-price * {
+      margin-right: 20px;
+    }
+
+    //desktop only
+    .desktop-only{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    //add-items
+    .add-items{
+      width: 30%;
+      margin: 0;
+      justify-content: space-between;
+    }
+
+    .minus{
+      margin-left: -20px;
+    }
+
+    .plus{
+      margin-right: -20px;
+    }
+
+    //add-to-cart
+    .add-to-cart{
+      width: 60%;
+      display: inline;
+    }
+
+    //complete-adding
+    .complete-adding{
+      left: 50%;
+    }
+
+    //cart-window
+    .cart-window{
+      width: 30%;
+      right: 10%;
+    }
+}
+
+@media (min-width: 369px) and (max-width: 900px){
+  body{
+    width: 100%;
+  }
+  header {
+    height: 70px;
+    background-color: $white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .navbar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 20px 0 0 20px;
+    width: 200px;
+    min-width: 200px;
+    height: 100%;
+  }
+  main{
+    display: block;
+  }
+
+  .navbar li button::after{
+    top: 30px;
+  }
+  .navbar li button:hover::after{
+    top: 30px;
+  }
+  .carousel{
+    margin: 20px auto 0 auto;
+    width: 50vw;
+  }
+  .carousel__track-container{
+    width: 50vw;
+    height: 50vw;
+  }
+
+  .text-detail{
+    margin: 20px auto 0 auto;
+    width: 60%;
+  }
+  
+  .cart-window{
+    width: 300px;
+  }
+}
+
+@media (max-width: 368px) {
+  // header layout
+  body{
+    width: 100%;
+  }
+  header {
+    height: 70px;
+    background-color: $white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .navbar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding: 20px 0 0 20px;
+    width: 200px;
+    height: 100%;
+  }
+  // Slide
+  .carousel{
+    height:300px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel__track-container{
+    overflow: hidden;
+    border-radius: 0;
+    width: 100%;
+  }
+
+  .carousel__nav {
+    display: none;
+  }
+
+ 
+
+  // main
+  //description-container
+  .description-container{
+    margin: 20px 20px;
+  }
+
+  // add-to-cart-button
+  .add-to-cart{
+    width: calc(100% - 40px);
+  }
+
+
+
+}

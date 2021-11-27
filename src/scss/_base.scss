@@ -1,0 +1,78 @@
+// resets, variables, mixins, classes
+// resets
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+p{
+  margin: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  appearance: none;
+  display: block;
+  box-sizing:border-box;
+  }
+  
+  button:hover, button:focus {
+    outline: none;
+  }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+// variables
+$orange:  hsl(26, 100%, 55%);
+$pale-orange: hsl(25, 100%, 94%);
+$very-dark-blue: hsl(220, 13%, 13%);
+$dark-grayish-blue: hsl(219, 9%, 45%);
+$grayish-blue: hsl(220, 14%, 75%);
+$light-grayish-blue: hsl(223, 64%, 98%);
+$white: hsl(0, 0%, 100%);
+$black : hsl(0, 0%, 0%);
+
+// minxins 
+// 400 or 700
+@mixin humbh-Sans($weight) {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: $weight;
+}
+
+@mixin p-font-size{
+  font-size: 16px;
+}
+
+// keyframes
+
+@keyframes popup {
+  0%{}
+  70%{transform: translateY(450px);}
+  100%{transform: translateY(420px);}
+}
+
+@keyframes closePopup {
+  0%{}
+  30% {transform: translateY(420px);}
+  100%{transform: translateY(-300px);}
+}
+
+@keyframes addedToYourCartStart {
+  0%{}
+  70%{transform: translateY(650px)}
+  100%{transform: translateY(620px)}
+}
+
+@keyframes disappear {
+  0%{opacity: 1}
+  100%{opacity: 0;}
+}

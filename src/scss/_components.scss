@@ -1,0 +1,374 @@
+// everything that is reusable 
+//– buttons, navbars, cards, and so on
+
+// Header
+// disappear some elements
+.hamburger, .close{
+  display: none;
+}
+
+
+//Slide Show
+.carousel__button{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  font-weight: bold;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel__button--left:hover, .carousel__button--right:hover{
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.carousel__button--left{
+  top: 150px;
+  left: 10px;
+}
+
+.carousel__button--right{
+  top: 150px;
+  right: 10px;
+}
+.indicator__image{
+  width: 60px;
+  height: 60px;
+  margin: -2px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.current__slide > .indicator__image {
+  opacity: 0.6;
+  border-radius: 10px;
+}
+
+//cart-button 
+.cart{
+  margin-right: -30px; 
+  fill: currentColor;
+}
+
+.cart-button {
+  color: $dark-grayish-blue;
+}
+
+// profile
+.profile-pic:hover{
+  border: 2px solid $orange;
+}
+
+.profile-pic {
+  width: 40px;
+  border-radius: 50%;
+}
+
+// description-container
+.company{
+  @include humbh-Sans(700);
+  color: $orange;
+  font-size: 14px;
+}
+
+.item-name {
+  @include humbh-Sans(700);
+  color: $black;
+  font-size: 28px;
+}
+
+.description{
+  color: $dark-grayish-blue;
+}
+
+  //display price
+  .price{
+    @include humbh-Sans(700);
+    font-size: 28px;
+  }
+
+  .on-sale{
+    @include humbh-Sans(700);
+    color: $orange;
+    background-color: $pale-orange;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+
+  .original-price{
+    @include humbh-Sans(400);
+    color: $grayish-blue;
+    text-decoration: line-through;
+  }
+  // add-items
+  .add-items{
+    background-color: $light-grayish-blue;
+    border-radius: 10px;
+  }
+
+  .minus{
+    @include humbh-Sans(700);
+    color: $orange;
+    font-size: 28px;
+  }
+
+  .number-of-items{
+    @include humbh-Sans(700);
+    margin: 0;
+  }
+
+  .plus{
+    @include humbh-Sans(700);
+    color: $orange;
+    font-size: 28px;
+  }
+
+  // add-to-cart
+  .add-to-cart{
+    @include humbh-Sans(700);
+    background-color: $orange;
+    border-radius: 10px;
+    box-shadow: 0 20px 20px 0  $pale-orange;
+    color: $white;
+  }
+
+  .add-to-cart:hover{
+    background-color: hsl(26, 91%, 68%);
+  }
+
+  .cart-add-ver{
+    fill: $white;
+  }
+
+  .text {
+    padding-left: 20px;
+  }
+  // complete-adding
+  .complete-adding{
+    @include humbh-Sans(700);
+    color: $black;
+    background-color: rgb(240, 165, 66);
+    border-radius: 10px;
+  }
+
+  .add-to-cart-start{
+    animation: addedToYourCartStart 0.7s ease-in-out forwards,
+                disappear 2.5s cubic-bezier(1,.01,.84,1) forwards;
+  }
+  //cart-window
+  .cart-window{
+    background-color: $white;
+    border-radius: 10px;
+  }
+  .text-cart{
+    @include humbh-Sans(700);
+    padding: 20px 30px;
+    margin: 0;
+    border-bottom: solid 2px $light-grayish-blue;
+  }
+
+  .start-popup{
+    animation: popup 0.7s ease forwards;
+  }
+
+  .close-cart-window{
+    animation: closePopup 0.7 ease forwards;
+  }
+
+  .empty-text{
+    @include humbh-Sans(700);
+    color: $dark-grayish-blue;
+    text-align: center;
+    padding-top: 20%;
+  }
+
+  .name{
+    @include humbh-Sans(400);
+    color: $dark-grayish-blue;
+  }
+
+  .price-detail{
+    @include humbh-Sans(400);
+    color: $dark-grayish-blue;
+  }
+
+  .total-amount{
+    font-weight: bold;
+    color: $black;
+  }
+
+  .thumbnail{
+    width: 50px;
+    border-radius: 5px;
+  }
+
+  .checkout{
+    @include humbh-Sans(700);
+    background-color: $orange;
+    border-radius: 10px;
+    color: $white;
+  }
+
+  .checkout:hover{
+    background-color: hsl(26, 91%, 68%);
+  }
+
+
+@media (min-width: 1200px){
+  .carousel__button--left{
+    top: 250px;
+  }
+
+  .carousel__button--right{
+    top: 250px;
+  }
+}
+
+
+
+@media (min-width: 369px){
+  // header
+  //cart-button
+  .cart-button{
+      margin-left: auto;
+    }
+
+    //profile
+    .profile{
+      margin-left: 60px;
+    }
+    .profile-pic{
+      width: 50px;
+    }
+  
+  //main
+  //description-container
+  .company{
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+  .item-name{
+    font-size: 40px;
+  }
+
+  .description{
+    padding: 30px 0 20px 0;
+  }
+
+  .complete-adding{
+    width: 40%;
+  }
+
+}
+@media (min-width: 369px) and (max-width: 900px){
+  .bg-dark::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.7;
+    z-index: 90;
+  }
+  .hamburger, .close{
+    display: block;
+  }
+  .hamburger{
+    margin: 0 25px;
+  }
+
+  .navbar{
+    background-color: $white;
+    left: -200px;
+    transform: translateX(-200px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .open{
+    transform: translateX(200px);
+  }
+  
+  .exit{
+    transform: translateX(-200px);
+  }
+
+  li:first-child{
+    margin-bottom: 40px;
+  }
+
+  li {
+    margin-bottom: 25px;
+    button {
+      @include humbh-Sans(700);
+      font-size: 20px;
+    }
+  }
+
+  .carousel__button--left, .carousel__button--right{
+    top: 25vw;
+  }
+
+}
+
+@media (max-width: 368px) {
+  // body
+  .bg-dark::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $black;
+    opacity: 0.7;
+    z-index: 90;
+  }
+
+  // header
+  .home {
+    display: block;
+    margin: 0 20px 0 -30px;
+  }
+
+  .hamburger, .close{
+    display: block;
+  }
+
+  .navbar{
+    background-color: $white;
+    left: -200px;
+    transform: translateX(-200px);
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .open{
+    transform: translateX(200px);
+  }
+  
+  .exit{
+    transform: translateX(-200px);
+  }
+
+  li:first-child{
+    margin-bottom: 40px;
+  }
+
+  li {
+    margin-bottom: 25px;
+    button {
+      @include humbh-Sans(700);
+      font-size: 20px;
+    }
+  }
+
+  // Slide
+  .carousel__button{
+    top: 50%;
+  }
+}
+
