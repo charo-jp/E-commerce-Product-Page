@@ -231,7 +231,7 @@ body{
       height: auto;
       justify-content: space-around;
       align-items: center;
-      margin-top: 10px;
+      margin-top: 10%;
     }
       
     //text-detail
@@ -280,7 +280,7 @@ body{
 
     //complete-adding
     .complete-adding{
-      left: 50%;
+      left: 30%;
     }
 
     //cart-window
@@ -343,6 +343,7 @@ body{
   .cart-window{
     width: 300px;
   }
+
 }
 
 @media (max-width: 768px) {
