@@ -372,6 +372,38 @@ body{
     width: 200px;
     height: 100%;
   }
+  .navbar li {
+    margin: 10px 10px;
+  }
+  .navbar li button{
+
+    position: relative;
+  }
+
+  .navbar li button:hover{
+    color: rgba(0, 0, 0, 0.6);
+  }
+
+  .navbar li button::after{
+    content: "";
+    position: absolute;
+    margin: auto;
+    width: 0%;
+    top: 60px;
+    left: 0;
+    right: 0;
+    color: transparent;
+    height: 4px;
+    transition: width 500ms ease-in-out;
+  }
+
+  .navbar li button:hover::after{
+    width: 100%;
+    top: 30px;
+    left: 0;
+    background: $orange;
+  }
+  
   // Slide
   .carousel{
     height:300px;
