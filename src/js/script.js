@@ -13,10 +13,28 @@ const itemName = document.getElementById("item-name").textContent;
 let numberOfItems = document.getElementById("number-of-items");
 let items = 0;
 
+document.addEventListener("click", (e) => {
+  console.log(e.path[1].id);
+  if (e.path[1].id !== cartButton.id && e.path[1].id !== "cart-list" && e.path[1].id !== "cart-window"){
+    cartWindow.classList.remove("start-popup");
+  }
+  console.log(e.path[0]);
+
+  if (e.path[0].id ===  "web"){
+    navbar.classList.remove("open");
+    web.classList.remove("bg-dark");
+    navbar.classList.add("exit");
+    navbar.classList.remove("exit");
+  }
+})
+
+
 cartButton.addEventListener("click", () => {
   cartWindow.classList.toggle("start-popup");
   displayAddedList();
+  console.log(cartButton.id);
 })
+
 
 minus.addEventListener("click", () => {
   if (Number(numberOfItems.innerHTML) > 0) {

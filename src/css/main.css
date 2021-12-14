@@ -245,11 +245,12 @@ body {
   position: absolute;
   width: 20px;
   height: 10px;
-  margin: -2px 0 0 5px;
+  margin: -5px 0 0 5px;
   background-color: #ff7d1a;
   border-radius: 5px;
   font-size: 8px;
   color: white;
+  z-index: 0;
 }
 
 .cart-window {
