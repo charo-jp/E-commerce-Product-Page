@@ -44,13 +44,13 @@ closemenu.addEventListener("click", () => {
 
 addToCartButton.addEventListener("click", () => {
   const addItems = Number(numberOfItems.innerHTML);
-  items += addItems;
-  numberOfItems.innerHTML = 0;
-  cartButton.dataset.count = items;
-  if (items !== 0) {
-  cartButton.classList.add("item-numbers");
-  popupAnimation("🎉Added to your Cart🎉");
-} else {
+  if (addItems !== 0) {
+    items += addItems;
+    numberOfItems.innerHTML = 0;
+    cartButton.dataset.count = items;
+    cartButton.classList.add("item-numbers");
+    popupAnimation("🎉Added to your Cart🎉");
+  }else {
     popupAnimation("Please add more than 1 item!");
   }
 })
@@ -58,7 +58,7 @@ addToCartButton.addEventListener("click", () => {
 // functions
 function displayAddedList() {
   if (items === 0) {
-    cartList.style.display = "block";
+    cartList.style.display = "flex";
     cartList.innerHTML = `<p class = "empty-text">Your cart is empty.</p>`;
 
   }else {

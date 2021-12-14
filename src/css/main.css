@@ -257,6 +257,7 @@ body {
   z-index: 100;
   top: -300px;
   width: 90%;
+  max-width: 500px;
   height: 230px;
 }
 
@@ -495,16 +496,29 @@ body {
     background: #ff7d1a;
   }
 
+  .cart-button {
+    margin-left: 50px;
+  }
+
+  .cart-window {
+    justify-self: flex-end;
+  }
+
   .carousel {
-    height: 300px;
+    height: auto;
     width: 100%;
     margin: 0 auto;
+  }
+
+  .carousel__image {
+    height: auto;
   }
 
   .carousel__track-container {
     overflow: hidden;
     border-radius: 0;
     width: 100%;
+    height: 80vw;
   }
 
   .carousel__nav {
@@ -517,6 +531,10 @@ body {
 
   .add-to-cart {
     width: calc(100% - 40px);
+  }
+
+  .text-detail {
+    margin-top: 20px;
   }
 }
 .hamburger, .close {
@@ -708,7 +726,9 @@ body {
   font-weight: 700;
   color: #68707d;
   text-align: center;
-  padding-top: 20%;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .name {
