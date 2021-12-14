@@ -8,6 +8,10 @@ p {
   margin: 0;
 }
 
+svg {
+  pointer-events: none;
+}
+
 button {
   background-color: transparent;
   border: none;
@@ -583,7 +587,6 @@ body {
 }
 
 .cart {
-  margin-right: -30px;
   fill: currentColor;
 }
 
