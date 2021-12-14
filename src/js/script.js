@@ -16,7 +16,6 @@ let items = 0;
 document.addEventListener("click", (e) => {
   if (e.target.id !== cartButton.id && e.target.id !== "cart-list" && e.target.id !== "cart-window"){
     cartWindow.classList.remove("start-popup");
-    console.log("Removed");
   }
 
   if (e.target.id ===  "web"){
